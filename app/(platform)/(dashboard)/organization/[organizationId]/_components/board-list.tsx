@@ -34,7 +34,7 @@ const BoardList = async () => {
         {boards.map((board) => (
           <Link
             key={board.id}
-            href={`board/${board.id}`}
+            href={`/board/${board.id}`}
             className="group relative aspect-video bg-no-repeat bg-center bg-cover bg-sky-700 rounded-sm h-full w-full p-2 overflow-hidden"
             style={{ backgroundImage: `url(${board.imageThumbUrl})` }}
           >
@@ -58,23 +58,6 @@ const BoardList = async () => {
           </div>
         </FormPopover>
       </div>
-      {/* <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
-        <FormPopover sideOffset={10} side="right">
-          <div
-            role="button"
-            className="aspect-video relative h-full w-full bg-muted rounded-sm flex flex-col gap-y-1 items-center justify-center hover:opacity-75 transition"
-          >
-            <p className="text-sm">Create new board</p>
-            <span className="text-xs">5 remainning</span>
-            <Hint
-              sideOffset={40}
-              description={`Free Workspaces can have up to 5 open boards. For unlimited boards upgrade this workspace`}
-            >
-              <HelpCircle className="absolute bottom-2 right-2 h-[14px] w-[14px]" />
-            </Hint>
-          </div>
-        </FormPopover>
-      </div> */}
     </div>
   );
 };
@@ -84,6 +67,7 @@ export default BoardList;
 BoardList.Skeleton = function SkeletonBoardList() {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+      <Skeleton className="aspect-video h-full w-full p-2" />
       <Skeleton className="aspect-video h-full w-full p-2" />
       <Skeleton className="aspect-video h-full w-full p-2" />
       <Skeleton className="aspect-video h-full w-full p-2" />
