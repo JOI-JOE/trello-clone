@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import { ListContainer } from "./_components/list-container";
 
 interface BoardIdPageProps {
   params: {
@@ -9,7 +10,7 @@ interface BoardIdPageProps {
 }
 
 const BoardIdPage = async ({ params }: BoardIdPageProps) => {
-  const { orgId } = auth();
+  const { orgId } = await auth();
 
   if (!orgId) {
     redirect("/select-org");
@@ -29,8 +30,16 @@ const BoardIdPage = async ({ params }: BoardIdPageProps) => {
         },
       },
     },
+    orderBy: {
+      order: "asc",
+    },
   });
-  return <div>BoaPage</div>;
+
+  return (
+    <div className="p-4 h-full overflow-x-auto">
+      <ListContainer boardId={params.boardId} data={lists} />
+    </div>
+  );
 };
 
 export default BoardIdPage;
