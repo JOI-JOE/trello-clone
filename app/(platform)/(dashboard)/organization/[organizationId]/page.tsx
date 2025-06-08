@@ -13,7 +13,7 @@ const OrganizationIdPage = async () => {
           <BoardList />
         </Suspense>
       </div>
-    </div>
+  </div>
   );
 };
 

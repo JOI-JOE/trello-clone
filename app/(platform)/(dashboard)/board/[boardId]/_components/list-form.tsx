@@ -75,6 +75,7 @@ export const ListForm = () => {
             id="title"
             className="text-sm px-2 py-1 h-7 font-medium border-transparent hover:border-input focus:border-input transition"
             placeholder="Enter list title..."
+            defaultValue=""
           />
           <input hidden value={params.boardId} name="boardId" />
           <div className="flex items-center gap-x-1">

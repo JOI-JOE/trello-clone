@@ -1,6 +1,6 @@
 "use client";
 
-import { List } from "@/lib/generated/prisma";
+import { List } from "@/prisma/generated/prisma-client";
 import { ListForm } from "./list-form";
 import { useEffect, useState } from "react";
 import { ListItem } from "./list-item";
