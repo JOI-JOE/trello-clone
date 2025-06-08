@@ -20,7 +20,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
   let list;
 
   try {
-    const listToCopy = await prisma.list.delete({
+    const listToCopy = await prisma.list.findFirst({
       where: {
         id,
         boardId,
