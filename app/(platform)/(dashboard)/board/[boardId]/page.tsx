@@ -2,7 +2,6 @@ import { prisma } from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { ListContainer } from "./_components/list-container";
-import { ListWithCards } from "@/types";
 
 interface BoardIdPageProps {
   params: {
