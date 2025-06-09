@@ -147,7 +147,9 @@ exports.Prisma.CardScalarFieldEnum = {
   title: 'title',
   order: 'order',
   description: 'description',
-  listId: 'listId'
+  listId: 'listId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.SortOrder = {

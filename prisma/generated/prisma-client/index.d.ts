@@ -3408,6 +3408,8 @@ export namespace Prisma {
     order: number | null
     description: string | null
     listId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type CardMaxAggregateOutputType = {
@@ -3416,6 +3418,8 @@ export namespace Prisma {
     order: number | null
     description: string | null
     listId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type CardCountAggregateOutputType = {
@@ -3424,6 +3428,8 @@ export namespace Prisma {
     order: number
     description: number
     listId: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -3442,6 +3448,8 @@ export namespace Prisma {
     order?: true
     description?: true
     listId?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type CardMaxAggregateInputType = {
@@ -3450,6 +3458,8 @@ export namespace Prisma {
     order?: true
     description?: true
     listId?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type CardCountAggregateInputType = {
@@ -3458,6 +3468,8 @@ export namespace Prisma {
     order?: true
     description?: true
     listId?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -3553,6 +3565,8 @@ export namespace Prisma {
     order: number
     description: string | null
     listId: string
+    createdAt: Date
+    updatedAt: Date
     _count: CardCountAggregateOutputType | null
     _avg: CardAvgAggregateOutputType | null
     _sum: CardSumAggregateOutputType | null
@@ -3580,6 +3594,8 @@ export namespace Prisma {
     order?: boolean
     description?: boolean
     listId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     list?: boolean | ListDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["card"]>
 
@@ -3589,6 +3605,8 @@ export namespace Prisma {
     order?: boolean
     description?: boolean
     listId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     list?: boolean | ListDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["card"]>
 
@@ -3598,6 +3616,8 @@ export namespace Prisma {
     order?: boolean
     description?: boolean
     listId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     list?: boolean | ListDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["card"]>
 
@@ -3607,9 +3627,11 @@ export namespace Prisma {
     order?: boolean
     description?: boolean
     listId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type CardOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "order" | "description" | "listId", ExtArgs["result"]["card"]>
+  export type CardOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "order" | "description" | "listId" | "createdAt" | "updatedAt", ExtArgs["result"]["card"]>
   export type CardInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     list?: boolean | ListDefaultArgs<ExtArgs>
   }
@@ -3631,6 +3653,8 @@ export namespace Prisma {
       order: number
       description: string | null
       listId: string
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["card"]>
     composites: {}
   }
@@ -4060,6 +4084,8 @@ export namespace Prisma {
     readonly order: FieldRef<"Card", 'Int'>
     readonly description: FieldRef<"Card", 'String'>
     readonly listId: FieldRef<"Card", 'String'>
+    readonly createdAt: FieldRef<"Card", 'DateTime'>
+    readonly updatedAt: FieldRef<"Card", 'DateTime'>
   }
     
 
@@ -4521,7 +4547,9 @@ export namespace Prisma {
     title: 'title',
     order: 'order',
     description: 'description',
-    listId: 'listId'
+    listId: 'listId',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type CardScalarFieldEnum = (typeof CardScalarFieldEnum)[keyof typeof CardScalarFieldEnum]
@@ -4769,6 +4797,8 @@ export namespace Prisma {
     order?: IntFilter<"Card"> | number
     description?: StringNullableFilter<"Card"> | string | null
     listId?: StringFilter<"Card"> | string
+    createdAt?: DateTimeFilter<"Card"> | Date | string
+    updatedAt?: DateTimeFilter<"Card"> | Date | string
     list?: XOR<ListScalarRelationFilter, ListWhereInput>
   }
 
@@ -4778,6 +4808,8 @@ export namespace Prisma {
     order?: SortOrder
     description?: SortOrderInput | SortOrder
     listId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     list?: ListOrderByWithRelationInput
   }
 
@@ -4790,6 +4822,8 @@ export namespace Prisma {
     order?: IntFilter<"Card"> | number
     description?: StringNullableFilter<"Card"> | string | null
     listId?: StringFilter<"Card"> | string
+    createdAt?: DateTimeFilter<"Card"> | Date | string
+    updatedAt?: DateTimeFilter<"Card"> | Date | string
     list?: XOR<ListScalarRelationFilter, ListWhereInput>
   }, "id">
 
@@ -4799,6 +4833,8 @@ export namespace Prisma {
     order?: SortOrder
     description?: SortOrderInput | SortOrder
     listId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: CardCountOrderByAggregateInput
     _avg?: CardAvgOrderByAggregateInput
     _max?: CardMaxOrderByAggregateInput
@@ -4815,6 +4851,8 @@ export namespace Prisma {
     order?: IntWithAggregatesFilter<"Card"> | number
     description?: StringNullableWithAggregatesFilter<"Card"> | string | null
     listId?: StringWithAggregatesFilter<"Card"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Card"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Card"> | Date | string
   }
 
   export type BoardCreateInput = {
@@ -4983,6 +5021,8 @@ export namespace Prisma {
     title: string
     order: number
     description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
     list: ListCreateNestedOneWithoutCardsInput
   }
 
@@ -4992,6 +5032,8 @@ export namespace Prisma {
     order: number
     description?: string | null
     listId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type CardUpdateInput = {
@@ -4999,6 +5041,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     order?: IntFieldUpdateOperationsInput | number
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     list?: ListUpdateOneRequiredWithoutCardsNestedInput
   }
 
@@ -5008,6 +5052,8 @@ export namespace Prisma {
     order?: IntFieldUpdateOperationsInput | number
     description?: NullableStringFieldUpdateOperationsInput | string | null
     listId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CardCreateManyInput = {
@@ -5016,6 +5062,8 @@ export namespace Prisma {
     order: number
     description?: string | null
     listId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type CardUpdateManyMutationInput = {
@@ -5023,6 +5071,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     order?: IntFieldUpdateOperationsInput | number
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CardUncheckedUpdateManyInput = {
@@ -5031,6 +5081,8 @@ export namespace Prisma {
     order?: IntFieldUpdateOperationsInput | number
     description?: NullableStringFieldUpdateOperationsInput | string | null
     listId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -5248,6 +5300,8 @@ export namespace Prisma {
     order?: SortOrder
     description?: SortOrder
     listId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type CardAvgOrderByAggregateInput = {
@@ -5260,6 +5314,8 @@ export namespace Prisma {
     order?: SortOrder
     description?: SortOrder
     listId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type CardMinOrderByAggregateInput = {
@@ -5268,6 +5324,8 @@ export namespace Prisma {
     order?: SortOrder
     description?: SortOrder
     listId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type CardSumOrderByAggregateInput = {
@@ -5652,6 +5710,8 @@ export namespace Prisma {
     title: string
     order: number
     description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type CardUncheckedCreateWithoutListInput = {
@@ -5659,6 +5719,8 @@ export namespace Prisma {
     title: string
     order: number
     description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type CardCreateOrConnectWithoutListInput = {
@@ -5733,6 +5795,8 @@ export namespace Prisma {
     order?: IntFilter<"Card"> | number
     description?: StringNullableFilter<"Card"> | string | null
     listId?: StringFilter<"Card"> | string
+    createdAt?: DateTimeFilter<"Card"> | Date | string
+    updatedAt?: DateTimeFilter<"Card"> | Date | string
   }
 
   export type ListCreateWithoutCardsInput = {
@@ -5826,6 +5890,8 @@ export namespace Prisma {
     title: string
     order: number
     description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type CardUpdateWithoutListInput = {
@@ -5833,6 +5899,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     order?: IntFieldUpdateOperationsInput | number
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CardUncheckedUpdateWithoutListInput = {
@@ -5840,6 +5908,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     order?: IntFieldUpdateOperationsInput | number
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CardUncheckedUpdateManyWithoutListInput = {
@@ -5847,6 +5917,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     order?: IntFieldUpdateOperationsInput | number
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 
