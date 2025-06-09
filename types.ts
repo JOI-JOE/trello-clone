@@ -1,5 +1,5 @@
-import { Card, List } from "./lib/generated/prisma";
+import { Card, List } from "./prisma/generated/prisma-client";
 
-export type ListWithCards = List & { cards?: Card[] };
+export type ListWithCards = Card & { cards?: Card[] };
 
-export type CardWithList = Card & { list: List };
+export type CardWithList = List & { list: List };
