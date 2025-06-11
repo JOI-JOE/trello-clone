@@ -152,6 +152,37 @@ exports.Prisma.CardScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.AuditLogScalarFieldEnum = {
+  id: 'id',
+  orgId: 'orgId',
+  action: 'action',
+  entityId: 'entityId',
+  entityTitle: 'entityTitle',
+  entityType: 'entityType',
+  userId: 'userId',
+  userImage: 'userImage',
+  userName: 'userName',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.OrgLimitScalarFieldEnum = {
+  id: 'id',
+  orgId: 'orgId',
+  count: 'count',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.OrgSubscriptionScalarFieldEnum = {
+  id: 'id',
+  orgId: 'orgId',
+  stripeCustomerId: 'stripeCustomerId',
+  stripeSubsciptionId: 'stripeSubsciptionId',
+  stripePriceId: 'stripePriceId',
+  stripeCurrentPeriodEnd: 'stripeCurrentPeriodEnd'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -166,12 +197,25 @@ exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
+exports.ACTION = exports.$Enums.ACTION = {
+  CREATE: 'CREATE',
+  UPDATE: 'UPDATE',
+  DELETE: 'DELETE'
+};
 
+exports.ENTITY_TYPE = exports.$Enums.ENTITY_TYPE = {
+  BOARD: 'BOARD',
+  LIST: 'LIST',
+  CARD: 'CARD'
+};
 
 exports.Prisma.ModelName = {
   Board: 'Board',
   List: 'List',
-  Card: 'Card'
+  Card: 'Card',
+  AuditLog: 'AuditLog',
+  OrgLimit: 'OrgLimit',
+  OrgSubscription: 'OrgSubscription'
 };
 
 /**

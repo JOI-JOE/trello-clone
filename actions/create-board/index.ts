@@ -7,6 +7,8 @@ import { InputType, ReturnType } from "./types";
 import { revalidatePath } from "next/cache";
 import { createSafeAction } from "@/lib/create-safe-action";
 import { CreateBoard } from "./schema";
+import { hasAvailableCount, incrementAvailableCount } from "@/lib/org-limit";
+import { camelCase } from "lodash";
 
 const handler = async (data: InputType): Promise<ReturnType> => {
   const { userId, orgId } = await auth();
@@ -14,6 +16,15 @@ const handler = async (data: InputType): Promise<ReturnType> => {
   if (!userId || !orgId) {
     return {
       error: "Unauthorized",
+    };
+  }
+
+  const canCreate = await hasAvailableCount();
+
+  if (!canCreate) {
+    return {
+      error:
+        "You have reached your limit of free boards. Please upgrade to create more",
     };
   }
 
@@ -49,6 +60,8 @@ const handler = async (data: InputType): Promise<ReturnType> => {
         imageLinkHTML,
       },
     });
+
+    await incrementAvailableCount();
   } catch {
     return {
       error: "Failed to create",
